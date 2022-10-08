@@ -1,9 +1,12 @@
 name: dms-evaluate
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - biopython=1.78=py39h7f8727e_0
+  - fair-esm=1.0.2=pyhd8ed1ab_0
   - ipykernel=6.15.2=py39h06a4308_0
   - openpyxl=3.0.10=py39h5eee18b_0
   - pandas=1.4.4=py39h6a678d5_0
   - python=3.9.13=haa1d7c7_1
+  - tqdm=4.64.1=py39h06a4308_0
