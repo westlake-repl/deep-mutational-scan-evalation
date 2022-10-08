@@ -24,4 +24,8 @@
 
     总体上去除了找不到wt的数据集，剩下还剩37组数据
     另外，数据集中描述为stablized的数据集，其wildtype均使用的是未经过stablized的数据集
+
+## 安装
+
+    conda env create -f enviroment.yaml
     
