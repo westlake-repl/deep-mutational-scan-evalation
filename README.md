@@ -25,6 +25,31 @@
     总体上去除了找不到wt的数据集，剩下还剩37组数据
     另外，数据集中描述为stablized的数据集，其wildtype均使用的是未经过stablized的数据集
 
+### 数据集特殊情况
+
+    数据集中存在几种情况无法处理
+    - wildtype长度超过1022，ESM1v无法存储
+    - 多点突变
+    - 数据集中有WT，与其他形式格式不同
+    - 找到的sequence与csv中的不完全对应，需要进行修改
+
+    具体调整如下：
+    - POLG_HCVJF_Sun2014: wildtype长度超过1022
+    - PTEN_HUMAN_Fowler2018: 最后有一项是WT，需要手动在数据集里面删掉
+    - PABP_YEAST_Fields2013-doubles: 双点突变，暂时处理不了
+    - BRCA1_HUMAN_RING: wildtype长度超过1022
+    - MTH3_HAEAESTABILIZED_Tawfik2015: 第26号位置csv中是A，而sequence中是C。并且由于这个是Stabilized，所以我们相信csv中的标记，将sequence改为A；同理104号将sequence的I改为K；115 M到L；181 F到L；327 C到R
+    - UBC9_HUMAN_Roth2017: csv中159号位置有一个Y，但是sequence中没有，所以给sequence最后加入一个Y
+    - UBE4B_MOUSE_Klevit2013-singles: 长度超过1022
+    - TIM_THEMA_b0: 102号位置 C换成S
+    - F7YBW7_MESOW_vae: 四点突变，暂时不处理
+    - B3VI55_LIPSTSTABLE: 140号位置L变成I，142号位置从S变成A，373号位置A变成C
+    - HIS7_YEAST_Kondrashov2017: 多点同时突变，暂时不处理
+    - BRCA1_HUMAN_BRCT: 长度超过1022
+    - TPMT_HUMAN_Fowler2018: 最后有一项是WT，需要手动在数据集里面删掉
+
+    因此，这里将经过处理的可以直接运行的data上传
+
 ## 安装
 
     conda env create -f enviroment.yaml
