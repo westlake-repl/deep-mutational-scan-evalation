@@ -53,4 +53,13 @@
 ## 安装
 
     conda env create -f enviroment.yaml
-    
+
+## 处理K50_dG数据集
+
+- 数据集来自于：[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7401275.svg)](https://doi.org/10.5281/zenodo.7401275)
+- 文章来自于: [![DOI](https://zenodo.org/badge/DOI/10.1101/2022.12.06.519132.svg)](https://doi.org/10.1101/2022.12.06.519132)
+- 将[数据集](https://zenodo.org/record/7401275/files/Processed_K50_dG_datasets.zip?download=1)下载，解压后放在`Processed_K50_dG_datasets`文件夹下
+
+```bash
+python process_data.py -i Processed_K50_dG_datasets/K50_dG_Dataset1_Dataset2.csv -o Processed_K50_dG_datasets/data -fc deltaG
+```
